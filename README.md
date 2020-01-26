@@ -1,4 +1,4 @@
-# sam-app
+# Sample Codebase GULP
 
 This is a sample code-base for gulp
 
@@ -7,6 +7,10 @@ This is a sample code-base for gulp
 * [NodeJS 4.x+ installed](https://nodejs.org/en/download/releases/);
 
 ## Setup process
+### Install dependencies
+```bash
+npm i or npm install
+```
 
 ### Local development
 

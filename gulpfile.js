@@ -117,7 +117,7 @@ function html() {
 }
 
 function vendorJS() {
-	return src(['dist/js/vendor.js'])
+	return src(['dist/asset/js/vendor.js'])
 		.pipe(uglify())
 		.pipe($.plumber())
 		.pipe(buffer())
@@ -223,7 +223,7 @@ function twig() {
 function zipDist() {
 	let timestamp = moment().format('YYYY-MM-DD_hh-mm-ss');
     return src('dist/**/*')
-        .pipe(zip('blog'+timestamp+'.zip'))
+        .pipe(zip('blog-'+timestamp+'.zip'))
         .pipe(dest('packages'));
 }
 
