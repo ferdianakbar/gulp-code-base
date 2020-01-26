@@ -1,0 +1,500 @@
+// =============================================================================
+// Font Face
+// =============================================================================
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+	$src: null;
+
+	$extmods: (eot: "?",
+			svg: "#"+ str-replace($name, " ", "_"));
+
+	$formats: (otf: "opentype",
+			ttf: "truetype"
+		);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}
+
+// =============================================================================
+// Font Size
+// =============================================================================
+@mixin font-size($sizeValue: 16,
+	$line: $sizeValue * 1.5) {
+	font-size: ($sizeValue) + px;
+	line-height: ($line) + px;
+	font-size: ($sizeValue / 16) + rem;
+	line-height: ($line / 16) + rem;
+}
+
+// =============================================================================
+// Responsive Breakpoints
+// =============================================================================
+
+@mixin respond-to($media) {
+
+	/* Landscape phones and down */
+	@if $media==phone {
+		@media (max-width: 480px) {
+			@content;
+		}
+	}
+
+	/* Landscape phone to portrait tablet */
+	@else if $media==tablet-portrait {
+		@media (max-width: 767px) {
+			@content;
+		}
+	}
+
+	/* Portrait tablet to landscape and desktop */
+	@else if $media==tablet-landscape-desktop {
+		@media (min-width: 768px) and (max-width: 979px) {
+			@content;
+		}
+	}
+
+	/* Large desktop */
+	@else if $media==large-desktop {
+		@media (min-width: 1200px) {
+			@content;
+		}
+	}
+
+	/* Large desktop 1201 - 1250 */
+	@else if $media==large-desktop-1201-1250 {
+		@media (max-width: 1250px) and (min-width: 1201px) {
+			@content;
+		}
+	}
+
+	/* Large desktop 1251 - 1300 */
+	@else if $media==large-desktop-1251-1300 {
+		@media (max-width: 1300px) and (min-width: 1251px) {
+			@content;
+		}
+	}
+
+	/* Large desktop 1301 - 1350 */
+	@else if $media==large-desktop-1301-1350 {
+		@media (max-width: 1350px) and (min-width: 1301px) {
+			@content;
+		}
+	}
+
+	/* Large desktop 1351 - 1400 */
+	@else if $media==large-desktop-1351-1400 {
+		@media (max-width: 1400px) and (min-width: 1351px) {
+			@content;
+		}
+	}
+
+	/* Large desktop 1401 - 1450 */
+	@else if $media==large-desktop-1401-1450 {
+		@media (max-width: 1450px) and (min-width: 1401px) {
+			@content;
+		}
+	}
+
+	/* Large desktop 1451 - 1500 */
+	@else if $media==large-desktop-1451-1500 {
+		@media (max-width: 1500px) and (min-width: 1451px) {
+			@content;
+		}
+	}
+
+	/* Large desktop 1501 - 1550 */
+	@else if $media==large-desktop-1501-1550 {
+		@media (max-width: 1550px) and (min-width: 1501px) {
+			@content;
+		}
+	}
+
+	/* Large desktop 1551 - 1600 */
+	@else if $media==large-desktop-1551-1600 {
+		@media (max-width: 1600px) and (min-width: 1551px) {
+			@content;
+		}
+	}
+
+	/* Large desktop 1601 - 1650 */
+	@else if $media==large-desktop-1601-1650 {
+		@media (max-width: 1650px) and (min-width: 1601px) {
+			@content;
+		}
+	}
+
+	/* Large desktop 1651 - 1700 */
+	@else if $media==large-desktop-1651-1700 {
+		@media (max-width: 1700px) and (min-width: 1651px) {
+			@content;
+		}
+	}
+
+	/* Large desktop 1701 - 1750 */
+	@else if $media==large-desktop-1701-1750 {
+		@media (max-width: 1750px) and (min-width: 1701px) {
+			@content;
+		}
+	}
+
+	/* Large desktop 1751 - 1800 */
+	@else if $media==large-desktop-1751-1800 {
+		@media (max-width: 1800px) and (min-width: 1751px) {
+			@content;
+		}
+	}
+
+	/* Large desktop 1801 - 1850 */
+	@else if $media==large-desktop-1801-1850 {
+		@media (max-width: 1850px) and (min-width: 1801px) {
+			@content;
+		}
+	}
+
+	/* Large desktop 1851 - 1920 */
+	@else if $media==large-desktop-1851-1920 {
+		@media (max-width: 1920px) and (min-width: 1851px) {
+			@content;
+		}
+	}
+
+	/* Large desktop 1920 and higher */
+	@else if $media==large-desktop-1920 {
+		@media (min-width: 1920px) {
+			@content;
+		}
+	}
+
+	// Breakpoint between 1201 - 1450
+	@else if $media==large-desktop-1201-1450 {
+		@media (max-width: 1450px) and (min-width: 1201px) {
+			@content;
+		}
+	}
+
+	// More than 1200px screens
+	@else if $media==more-than-1200 {
+		@media (min-width: 1201px) {
+			@content;
+		}
+	}
+
+	// Less than 1200px screens
+	@else if $media==less-than-1200 {
+		@media (max-width: 1201px) and (min-width: 320px) {
+			@content;
+		}
+	}
+
+	// Less than 768px to 1200px screens
+	@else if $media==mid-screen-768-1200 {
+		@media (max-width: 1200px) and (min-width: 768px) {
+			@content;
+		}
+	}
+
+	// Non-Retina
+	@else if $media==non-retina {
+		@media screen and (-webkit-max-device-pixel-ratio: 1) {
+			@content;
+		}
+	}
+
+	// Retina Only
+	@else if $media==retina {
+		@media screen and (-webkit-min-device-pixel-ratio: 2) {
+			@content;
+		}
+	}
+
+	// Retina Only
+	@else if $media==ipad-portrait {
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+			@content;
+		}
+	}
+
+	// Retina Only
+	@else if $media==ipad-landscape {
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+			@content;
+		}
+	}
+
+	@else if $media==ipad-pro {
+		@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+			@content;
+		}
+	}
+
+	// Specific max width
+	@else {
+		@media only screen and (max-width: #{$media}px) {
+			@content;
+		}
+	}
+}
+
+// =============================================================================
+// Clear Fix
+// =============================================================================
+
+@mixin clearit {
+
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+
+	zoom: 1;
+}
+
+// =============================================================================
+// Transitions
+// =============================================================================
+
+/* @include transition(all,2s,ease-out); */
+@mixin transition($what: all,
+	$time: 0.2s,
+	$how: ease-in-out) {
+	-webkit-transition: $what $time $how;
+	-moz-transition: $what $time $how;
+	-ms-transition: $what $time $how;
+	-o-transition: $what $time $how;
+	transition: $what $time $how;
+}
+
+// =============================================================================
+// Responsive ratio
+// =============================================================================
+
+@mixin responsive-ratio($x,
+	$y,
+	$pseudo: false) {
+	$padding: unquote(($y / $x) * 100 + '%');
+
+	@if $pseudo {
+		&:before {
+			@include pseudo($pos: relative);
+			width: 100%;
+			padding-top: $padding;
+		}
+	}
+
+	@else {
+		padding-top: $padding;
+	}
+}
+
+// =============================================================================
+// Opacity
+// =============================================================================
+
+@mixin opacity($op) {
+	-khtml-opacity: $op;
+	-moz-opacity: $op;
+	opacity: $op;
+}
+
+
+// =============================================================================
+// Border Radius
+// =============================================================================
+
+@mixin border-radius($radius) {
+	-webkit-background-clip: padding-box;
+	-webkit-border-radius: $radius;
+	-moz-background-clip: padding-box;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+	background-clip: padding-box;
+}
+
+// =============================================================================
+// Break Word
+// =============================================================================
+
+@mixin break-word() {
+	/* These are technically the same, but use both */
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+
+	-ms-word-break: break-all;
+	/* This is the dangerous one in WebKit, as it breaks things wherever */
+	word-break: break-all;
+	/* Instead use this non-standard one: */
+	word-break: break-word;
+
+	/* Adds a hyphen where the word breaks, if supported (No Blink) */
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+}
+
+// =============================================================================
+// Box Shadow
+// =============================================================================
+
+@mixin box-shadow($top,
+	$left,
+	$blur,
+	$color,
+	$inset:"") {
+	-webkit-box-shadow:$top $left $blur $color #{$inset};
+	-moz-box-shadow:$top $left $blur $color #{$inset};
+	box-shadow:$top $left $blur $color #{$inset};
+}
+
+// =============================================================================
+// Gradient
+// =============================================================================
+@mixin gradient($from,
+	$to) {
+	background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+	background: -moz-linear-gradient(top, $from, $to);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}',
+		endColorstr='#{$to}');
+}
+
+// =============================================================================
+// Rotate
+// =============================================================================
+
+@mixin transform($deg) {
+	-webkit-transform: rotate($deg);
+	-moz-transform: rotate($deg);
+	-ms-transform: rotate($deg);
+	-o-transform: rotate($deg);
+	transform: rotate($deg);
+}
+
+// Prefix declarations
+@mixin prefixed($property,
+	$value) {
+	-webkit-#{$property}: unquote($value);
+	-moz-#{$property}: unquote($value);
+	-ms-#{$property}: unquote($value);
+	-o-#{$property}: unquote($value);
+	#{$property}: unquote($value);
+}
+
+@mixin aspect-ratio($width,
+	$height) {
+	position: relative;
+	height: auto;
+
+	&:before {
+		/* Make an element a certain aspect ratio */
+		display: block;
+		content: "";
+		width: 100%;
+		padding-top: ($height / $width) * 65%;
+	}
+
+	.seq-screen {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+}
+
+// =============================================================================
+// clear bootstrap row negative margins
+// =============================================================================
+
+@mixin clear-bs-row {
+	>.row {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+// =============================================================================
+// Country selector flag
+// =============================================================================
+
+@mixin flag-size($flagsize: 20px) {
+	// variables for calculating flag size and offset margin
+	// based on selectize default css
+	$padding: 27px;
+	$maxheight: 46px;
+	$border: 2px;
+
+	position: relative;
+	top: -2px;
+	width: $flagsize;
+	height: $flagsize;
+	margin-top: ($maxheight - $padding - $flagsize - $border) / 2;
+	margin-bottom: (($maxheight - $padding - $flagsize - $border) / 2) - 1px;
+}
+
+
+// =============================================================================
+// Convert pixels to rems
+// eg. for a relational value of 12px write rem(12)
+// Assumes $em-base is the font-size of <html>
+// =============================================================================
+$em-base: 16px;
+
+@function strip-units($value) {
+	@return ($value / ($value * 0 + 1));
+}
+
+@function rem($pxval) {
+	@if not unitless($pxval) {
+		$pxval: strip-units($pxval);
+	}
+
+	$base: $em-base;
+
+	@if not unitless($base) {
+		$base: strip-units($base);
+	}
+
+	@return ($pxval / $base) * 1rem;
+}
+
+/**
+ * Util/Mixin - breakpoint
+ * A wrapper around the @media query.
+ *
+ * @param $type - Type of media query (max-width, min-width, etc).
+ * @param $width - Width of @media to target
+ */
+@mixin bp($size, $width) {
+
+	@media screen and ($size: #{$width}px) {
+		@content;
+	}
+
+}
+
+// =============================================================================
+// Absolute Center
+// =============================================================================
+
+@mixin absolute-center() {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}

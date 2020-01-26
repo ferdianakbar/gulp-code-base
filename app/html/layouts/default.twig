@@ -1,0 +1,92 @@
+<!-- default.twig -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Hello World!!!">
+
+	<title>{{ title }}</title>
+
+	<!-- Favicon Placeholder -->
+	<!-- generics -->
+    <link rel="icon" href="placeholder/images/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" href="placeholder/images/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="placeholder/images/favicon/favicon-96x96.png" sizes="96x96">
+
+    <!-- Android -->
+    <link rel="shortcut icon" sizes="36x36" href="placeholder/images/favicon/android-icon-36x36.png">
+    <link rel="shortcut icon" sizes="48x48" href="placeholder/images/favicon/android-icon-48x48.png">
+    <link rel="shortcut icon" sizes="72x72" href="placeholder/images/favicon/android-icon-72x72.png">
+    <link rel="shortcut icon" sizes="96x96" href="placeholder/images/favicon/android-icon-96x96.png">
+    <link rel="shortcut icon" sizes="144x144" href="placeholder/images/favicon/android-icon-144x144.png">
+    <link rel="shortcut icon" sizes="192x192" href="placeholder/images/favicon/android-icon-192x192.png">
+
+    <!-- iOS -->
+    <link rel="apple-touch-icon" href="placeholder/images/favicon/apple-icon-57x57.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="placeholder/images/favicon/apple-icon-60x60.png" sizes="60x60">
+    <link rel="apple-touch-icon" href="placeholder/images/favicon/apple-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="placeholder/images/favicon/apple-icon-76x76.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="placeholder/images/favicon/apple-icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="placeholder/images/favicon/apple-icon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="placeholder/images/favicon/apple-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon" href="placeholder/images/favicon/apple-icon-152x152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="placeholder/images/favicon/apple-icon-180x180.png" sizes="180x180">
+    <link rel="apple-touch-icon" href="placeholder/images/favicon/apple-icon.png" sizes="192x192">
+
+    <!-- Windows 8 IE 10 -->
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="placeholder/images/favicon/ms-icon-144x144.png">
+    <meta name="msapplication-square70x70logo" content="ms-icon-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="ms-icon-150x150.png" />
+    <meta name="msapplication-square310x310logo" content="ms-icon-310x310.png" />
+
+    <!-- Windows 8.1 + IE11 and above -->
+    <meta name="msapplication-config" content="placeholder/images/favicon/browserconfig.xml" />
+	<!-- Favicon Placeholder END -->
+
+	<!-- Google Site Verification -->
+	<meta name="google-site-verification" content="your verification string">
+	<!-- Google Site Verification END -->
+
+	<!-- OG Tags Placeholder -->
+	<!-- COMMON TAGS -->
+	<meta charset="utf-8">
+
+	<!-- build:css clientlib-site/css/vendor.css-->
+
+	<!-- <link rel="stylesheet" href="asset/css/vendor.css" type="text/css" /> -->
+
+	<!-- endbuild-->
+
+	<!-- build:css clientlib-site/css/main.css-->
+	<link rel="stylesheet" href="asset/css/main.css" />
+	<!-- endbuild-->
+
+
+</head>
+
+<body data-direction="ltr" data-template="default">
+
+	<div class="root">
+		{% block page %}{% endblock %}
+	</div>
+
+	<!-- build:js clientlib-site/js/vendor.js -->
+	<script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
+	<!-- endbuild -->
+
+	<script type="text/javascript" src="/node_modules/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
+
+	<!-- build:js clientlib-site/js/main.js -->
+	<script type="text/javascript" src="asset/js/main.js"></script>
+	<!-- endbuild -->
+</body>
+
+{# {% include '../organisms/footer.twig' %} #}
+
+</html>

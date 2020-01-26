@@ -1,0 +1,41 @@
+{
+	"env": {
+		"browser": true,
+		"es6": true,
+		"commonjs": true,
+		"node": true,
+		"jquery": true
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:security/recommended"
+	],
+	"globals": {
+		"Atomics": "readonly",
+		"SharedArrayBuffer": "readonly"
+	},
+	"parserOptions": {
+		"ecmaVersion": 2018,
+		"sourceType": "module"
+	},
+	"plugins": [
+		"security"
+	],
+	"rules": {
+		"no-console": "off",
+        "indent": ["error", "tab"],
+        "max-len": ["error", {
+            "code": 200
+        }],
+        "require-jsdoc": ["error", {
+            "require": {
+                "FunctionDeclaration": true,
+                "MethodDefinition": false,
+                "ClassDeclaration": true,
+                "ArrowFunctionExpression": false,
+                "FunctionExpression": false
+            }
+        }],
+        "eol-last": 0
+    }
+}
