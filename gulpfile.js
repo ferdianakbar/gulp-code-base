@@ -143,8 +143,8 @@ function fonts() {
 }
 
 function jsondata() {
-	return src('app/clientlib-site/resources/data/**/*')
-		.pipe($.if(!isProd, dest('.tmp/clientlib-site/resources/data'), dest('dist/clientlib-site/resources/data')));
+	return src('app/resources/data/**/*')
+		.pipe($.if(!isProd, dest('.tmp/resources/data'), dest('dist/resources/data')));
 }
 
 function extras() {
@@ -247,10 +247,10 @@ function startAppServer() {
 		'app/content/**/*',
 		'app/asset/images/**/*',
 		'.tmp/asset/fonts/**/*',
-		'.tmp/clientlib-site/resources/data/**/*'
+		'.tmp/resources/data/**/*'
 	]).on('change', server.reload);
 	watch('app/asset/images/**/*', images);
-	watch('app/clientlib-site/resources/data/**/*', jsondata);
+	watch('app/resources/data/**/*', jsondata);
 
 	watch('app/html/**/*.twig', twig);
 	watch('app/sass/**/*.scss', styles);
