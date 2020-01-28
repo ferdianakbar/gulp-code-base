@@ -61,9 +61,13 @@
 
 	<!-- <link rel="stylesheet" href="asset/css/vendor.css" type="text/css" /> -->
 
-	<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	{# <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> #}
 	<!-- include summernote css/js -->
 	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.css" rel="stylesheet">
+	<!-- endbuild-->
+
+	<!-- include summernote css/js -->
+	<link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 	<!-- endbuild-->
 
 	<!-- build:css asset/css/main.css-->
@@ -76,7 +80,9 @@
 <body data-direction="ltr" data-template="default">
 
 	<div class="root">
-		{% block page %}{% endblock %}
+		{% block page %}
+			{% include 'nav_sidebar.twig' %} 
+		{% endblock %}
 	</div>
 
 	<!-- build:js asset/js/vendor.js -->
@@ -88,8 +94,6 @@
 	<!-- build:js asset/js/main.js -->
 	<script type="text/javascript" src="asset/js/main.js"></script>
 	<!-- endbuild -->
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.js"></script>
 	<script>
 		$(document).ready(function() {
 			$('#summernote').summernote();
