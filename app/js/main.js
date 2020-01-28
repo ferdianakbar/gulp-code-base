@@ -2,4 +2,4 @@
 import '@babel/polyfill';
 import 'lazysizes';
 import 'lazysizes/plugins/attrchange/ls.attrchange';
-import './common/nav_sidebar'
+import '../common/sidebar'

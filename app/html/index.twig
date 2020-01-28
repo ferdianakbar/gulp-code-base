@@ -1,6 +1,7 @@
 {% extends "layouts/default.twig" %}
-		
-{% block page %}
-    {% include "nav_sidebar.twig" %}
 
+{% block page %}
+    <!-- ================== Content ================== -->
+    {% include '/components/sidebar.twig' %}
+    {% include '/components/categorymanagement.twig' %}
 {% endblock %}
