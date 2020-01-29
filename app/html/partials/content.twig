@@ -1,0 +1,20 @@
+{% include 'sidebar.twig' %}
+    <!-- content -->
+    <div id="content">
+            <div class="navbar-wrapper">
+                <div id="sidebarCollapse"><a href="#" class="sidebar-button">Sidebar</a></div>
+            </div>
+            <div class="content-main-wrapper">
+                <div class="container-fluid">
+                    <div class="content-main">
+                        {% block page %}
+                        {# {% include 'categorymanagement.twig' %} insert your content here #}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
