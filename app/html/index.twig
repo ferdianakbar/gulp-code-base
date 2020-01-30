@@ -1,6 +1,24 @@
 {% extends "layouts/default.twig" %}
 
 {% block page %}
-    <!-- ================== Content ================== -->
-    {% include '/partials/content.twig' %}
+    <div class="wrapper">
+
+        {% include '/partials/sidebar.twig' %}
+
+        <div id="content">
+            <div class="navbar-wrapper">
+                <div id="sidebarCollapse"><a href="#" class="sidebar-button">Sidebar</a></div>
+            </div>
+            <div class="content-main-wrapper">
+                <div class="container-fluid">
+                    <div class="content-main">
+                        <!-- ============ Content ========== -->
+                        {% include 'partials/categorylist.twig' %}
+                        <!-- ============ Content Ends Here ========== -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
