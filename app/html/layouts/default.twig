@@ -58,9 +58,14 @@
 	<meta charset="utf-8">
 
 	<!-- build:css asset/css/vendor.css-->
-
+	<link type="text/css" href='/node_modules/font-awesome/css/font-awesome.min.css' rel="stylesheet" />
 	<!-- <link rel="stylesheet" href="asset/css/vendor.css" type="text/css" /> -->
 
+	<!-- include summernote css/js -->
+	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.css" rel="stylesheet">
+	<!-- endbuild-->
+
+	<!-- include summernote css/js -->
 	<!-- endbuild-->
 
 	<!-- build:css asset/css/main.css-->
@@ -73,7 +78,8 @@
 <body data-direction="ltr" data-template="default">
 
 	<div class="root">
-		{% block page %}{% endblock %}
+		{% block page %}
+		{% endblock %}
 	</div>
 
 	<!-- build:js asset/js/vendor.js -->
@@ -85,6 +91,11 @@
 	<!-- build:js asset/js/main.js -->
 	<script type="text/javascript" src="asset/js/main.js"></script>
 	<!-- endbuild -->
+	<script>
+		$(document).ready(function() {
+			$('#summernote').summernote();
+		});
+	</script>
 </body>
 
 {# {% include '../organisms/footer.twig' %} #}

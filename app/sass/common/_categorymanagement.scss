@@ -1,0 +1,24 @@
+.category{
+
+    &-heading-sort{
+        background-color: #38d29f;
+        padding: 10px 25px 10px 25px;
+        border-radius: 8px;
+        box-shadow: 4px 7px #e8e8e8;
+        border: 1px solid white;
+        color: white;
+            &:hover{
+                color: white;
+                background-color: grey;
+                font-weight: 600;
+            }
+    }
+
+    &-heading-wrapper{
+        display: flex;
+    }
+
+    &-heading-sort-wrapper{
+        flex:1;
+    }
+}
