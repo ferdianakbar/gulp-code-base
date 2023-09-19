@@ -35,7 +35,7 @@ const $ = gulpLoadPlugins();
 const zip = require('gulp-zip');
 const moment = require('moment');
 const rename = require("gulp-rename");
-const uglify = require('gulp-uglify');
+const uglify = require('gulp-uglify-es').default;
 
 const server = browserSync.create();
 const port = argv.port || 9000;

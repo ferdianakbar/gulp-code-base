@@ -4,7 +4,7 @@ This is a sample code-base for gulp
 
 ## Requirements
 
-* [NodeJS 4.x+ installed](https://nodejs.org/en/download/releases/);
+* [NodeJS 12.x+ installed](https://nodejs.org/en/download/releases/);
 
 ## Setup process
 ### Install dependencies
